@@ -9,3 +9,4 @@ Description: Functions to produce ggplot2-based plots of objects produced by
     functions in the vegan package.
 License: MIT + file LICENCE
 Encoding: UTF-8
+RoxygenNote: 7.1.2
