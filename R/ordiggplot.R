@@ -64,6 +64,7 @@
 #'
 #' @importFrom stats weights
 #' @importFrom ggplot2 ggplot coord_fixed aes_string
+#' @importFrom vegan scores
 #'
 #' @param arrowmul Multiplier to arrow length. If missing, the arrow
 #'     length are adjusted to fit to other scores, but if some score
@@ -75,24 +76,24 @@
 {
     if (length(axes) > 2)
         stop("only two-dimensional plots made: too many axes defined")
-    df <- fortify(model, axes = axes, ...)
+    df <- scores(model, axes = axes, tidy = TRUE, ...)
     ## I don't currently know a way of adjusting arrows to the final
     ## plot frame, so try to scale them to fit the data points at
     ## least
-    isBip <- df$Score == "biplot"
+    isBip <- df$score == "biplot"
     if (any(isBip)) {
         ## remove biplot scores that have equal centroid
-        if (any(cntr <- df$Score == "centroids")) {
-            dup <- isBip & df$Label %in% df$Label[cntr]
+        if (any(cntr <- df$score == "centroids")) {
+            dup <- isBip & df$label %in% df$label[cntr]
             if (any(dup))
                 df <- df[!dup,]
-            isBip <- df$Score == "biplot"
+            isBip <- df$score == "biplot"
         }
         if (any(isBip)) { # isBip may have changed
             if (missing(arrowmul))
-                arrowmul <- arrowMul(df[isBip, 3:4, drop=FALSE],
-                                     df[!isBip, 3:4, drop=FALSE])
-            df[isBip, 3:4] <- df[isBip, 3:4] * arrowmul
+                arrowmul <- ggvegan:::arrowMul(df[isBip, axes, drop=FALSE],
+                                     df[!isBip, axes, drop=FALSE])
+            df[isBip, axes] <- df[isBip, axes] * arrowmul
         }
     }
     ## weights are needed in some statistics
@@ -100,17 +101,17 @@
         rw <- weights(model)
         cw <- weights(model, display="species")
         wts <- rep(NA, nrow(df))
-        if (any(want <- df$Score == "sites"))
+        if (any(want <- df$score == "sites"))
             wts[want] <- rw
-        if (any(want <- df$Score == "constraints"))
+        if (any(want <- df$score == "constraints"))
             wts[want] <- rw
-        if (any(want <- df$Score == "species"))
+        if (any(want <- df$score == "species"))
             wts[want] <- cw
         df$weight <- wts
     }
-    dlab <- colnames(df)[3:4]
+    dlab <- colnames(df)[axes]
     pl <- ggplot(data = df, mapping=aes_string(dlab[1], dlab[2],
-                 label="Label"))
+                 label="label"))
     pl <- pl + coord_fixed(ratio=1)
     pl
 }
@@ -147,7 +148,7 @@
     if (missing(Score) && missing(data))
         stop("either Score or data must be defined")
     if (missing(data))
-        data <- ~.x[.x$Score == Score,]
+        data <- ~.x[.x$score == Score,]
     geom_text(data = data, ...)
 }
 #' @rdname ordiggplot
@@ -158,14 +159,14 @@
     if (missing(Score) && missing(data))
         stop("either Score or data must be defined")
     if (missing(data))
-        data <- ~.x[.x$Score == Score,]
+        data <- ~.x[.x$score == Score,]
     geom_label(data = data, ...)
 }
 
 #' @param arrow.params,text.params Parameters to modify arrows or
 #'     their text labels.
 #'
-#' @importFrom ggplot2 geom_segment geom_label geom_text aes
+#' @importFrom ggplot2 geom_segment geom_label geom_text aes unit
 #' @importFrom grid arrow
 #' @importFrom utils modifyList
 #'
@@ -336,5 +337,5 @@
 `ggscores` <-
     function(Score)
 {
-    ~.x[.x$Score == Score,]
+    ~.x[.x$score == Score,]
 }
