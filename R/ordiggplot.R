@@ -96,19 +96,6 @@
             df[isBip, axes] <- df[isBip, axes] * arrowmul
         }
     }
-    ## weights are needed in some statistics
-    if (inherits(model, c("cca", "wcmdscale", "decorana"))) {
-        rw <- weights(model)
-        cw <- weights(model, display="species")
-        wts <- rep(NA, nrow(df))
-        if (any(want <- df$score == "sites"))
-            wts[want] <- rw
-        if (any(want <- df$score == "constraints"))
-            wts[want] <- rw
-        if (any(want <- df$score == "species"))
-            wts[want] <- cw
-        df$weight <- wts
-    }
     dlab <- colnames(df)[axes]
     pl <- ggplot(data = df, mapping=aes_string(dlab[1], dlab[2],
                  label="label"))
