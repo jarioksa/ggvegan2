@@ -63,7 +63,7 @@
 #'    formula = ~ N + Ca + Al + Humdepth + pH)
 #'
 #' @importFrom stats weights
-#' @importFrom ggplot2 ggplot coord_fixed aes_string
+#' @importFrom ggplot2 fortify ggplot coord_fixed aes_string
 #'
 #' @param arrowmul Multiplier to arrow length. If missing, the arrow
 #'     length are adjusted to fit to other scores, but if some score
@@ -90,7 +90,7 @@
         }
         if (any(isBip)) { # isBip may have changed
             if (missing(arrowmul))
-                arrowmul <- arrowMul(df[isBip, 3:4, drop=FALSE],
+                arrowmul <- ggvegan:::arrowMul(df[isBip, 3:4, drop=FALSE],
                                      df[!isBip, 3:4, drop=FALSE])
             df[isBip, 3:4] <- df[isBip, 3:4] * arrowmul
         }
@@ -165,7 +165,7 @@
 #' @param arrow.params,text.params Parameters to modify arrows or
 #'     their text labels.
 #'
-#' @importFrom ggplot2 geom_segment geom_label geom_text aes
+#' @importFrom ggplot2 geom_segment geom_label geom_text aes unit
 #' @importFrom grid arrow
 #' @importFrom utils modifyList
 #'
