@@ -3,6 +3,7 @@ Type: Package
 Title: Alternative 'ggplot2' Support for the 'vegan' Package 
 Version: 0.1-0
 Depends: vegan (>= 2.6-3), ggplot2
+Imports: scales
 Authors@R: person("Jari", "Oksanen", role = c("cre", "aut"),
 	   email="jhoksane@gmail.com")
 Description: Functions to produce ggplot2-based plots of objects produced by
