@@ -1,8 +1,19 @@
 # ggvegan2
 
 **ggvegan2** provides **ggplot2** graphics for some **vegan**
-objects. The package is complimentary to **ggvegan** package which has
-larger choice of functions. Currently it contains:
+objects. Current versions of **vegan** have support of **ggplot2**
+compatible `scores` of many result objects. This package provides
+functions that can directly access those scores to build graphics
+using **ggplot2** style `geom_` functions with full control. The
+package also provides **ggplot2** alternatives for some **lattice**
+panel functions.
+
+The package is complimentary to **ggvegan** package which has larger
+choice of functions and supports a wider range of **vegan**
+methods. The **ggvegan** package is mainly built on `fortify` to
+extract data and `autoplot` to fast and easy graphics.
+
+Currently **ggvegan2** contains:
 
 - Flexible and configurable plotting for most **vegan** ordination
   objects. These are an alternative with contrasting philosophy to
