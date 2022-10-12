@@ -28,3 +28,7 @@ Currently **ggvegan2** contains:
 - `autoplot` functions for Rank-Abundance Distribution models that
   provide a **ggplot2** alternative to Lattice graphics in **vegan**.
   
+- `autoplot` & `fortify` functions for diagnostic `permustats` plots
+  that provide a **ggplot2** alternative to Lattice graphics in
+  **vegan** and more flexible alternatives to plots in basic graphics.
+  
