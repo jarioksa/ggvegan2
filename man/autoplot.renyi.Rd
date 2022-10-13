@@ -51,7 +51,7 @@ permutation values faceted by alpha.
 \examples{
 ## Rényi
 data(BCI)
-mod <- renyi(BCI[sample(16),])
+mod <- renyi(BCI[sample(50, 16),])
 autoplot(mod)
 ## Diversity against the number of sites
 mod <- renyiaccum(BCI)
