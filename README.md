@@ -25,10 +25,10 @@ Currently **ggvegan2** contains:
   Moreover, it provides function `ggscores` that can be used to pass
   `ordiggplot` elements to standard **ggplot2** geometries.
   
-- `autoplot` functions for Rank-Abundance Distribution models that
-  provide a **ggplot2** alternative to Lattice graphics in **vegan**.
-  
-- `autoplot` & `fortify` functions for diagnostic `permustats` plots
-  that provide a **ggplot2** alternative to Lattice graphics in
-  **vegan** and more flexible alternatives to plots in basic graphics.
-  
+- Alternatives to **lattice** graphics function in **vegan** using
+  `autoplot`and `fortify`.  Currently implemented for Rank-Abundance
+  Distributions modes (`radline`, `radfit`, `radfit.frame`),
+  `permustats` diagnostic plots, and Rényi diversities (`renyi`,
+  `renyiaccum`and shold also work for similar `tsallis`
+  functions). The plan is to phase out **lattice** graphics from
+  **vegan** in favour of these **ggplot2** alternatives.
