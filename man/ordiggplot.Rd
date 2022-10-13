@@ -66,12 +66,13 @@ result. You can add new graphical elements to this plot with
 as their \code{data=} argument.
 }
 \details{
-The \pkg{ggvegan} package has two contrasting approaches to draw
+Mother package \pkg{ggvegan} has two contrasting approaches to draw
 ordination plots. The \code{autoplot} functions
-(e.g. \code{\link{autoplot.rda}}, \code{\link{autoplot.cca}},
-\code{\link{autoplot.metaMDS}}) draw a complete plot with one
-command, but the design is hard-coded in the function. However, you
-but can add new elements to the graph.
+(e.g. \code{\link[ggvegan]{autoplot.rda}},
+\code{\link[ggvegan]{autoplot.cca}},
+\code{\link[ggvegan]{autoplot.metaMDS}}) draw a complete plot with
+one command, but the design is hard-coded in the function. However,
+you can add new elements to the graph.
 
 In contrast, function \code{ordiggplot} only sets up an ordination
 plot, but draws no result. It allows you to add layers to the graph
@@ -86,7 +87,7 @@ any \pkg{ggplot2} function and in its \code{data=} argument use
 function.
 
 The \code{ordiggplot} function extracts results using
-\code{fortify} functions of this package, and it accepts the
+\code{scores} functions of \pkg{vegan} package, and it accepts the
 arguments of those functions. This allows setting, e.g., the
 scaling of ordination axes.
 }
