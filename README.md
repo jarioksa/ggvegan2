@@ -27,7 +27,7 @@ Currently **ggvegan2** contains:
   
 - Alternatives to **lattice** graphics function in **vegan** using
   `autoplot`and `fortify`.  Currently implemented for Rank-Abundance
-  Distributions modes (`radline`, `radfit`, `radfit.frame`),
+  Distributions models (`radline`, `radfit`, `radfit.frame`),
   `permustats` diagnostic plots, and Rényi diversities (`renyi`,
   `renyiaccum`and shold also work for similar `tsallis`
   functions). The plan is to phase out **lattice** graphics from
