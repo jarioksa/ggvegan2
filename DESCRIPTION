@@ -1,13 +1,16 @@
 Package: ggvegan2
 Type: Package
 Title: Alternative 'ggplot2' Support for the 'vegan' Package 
-Version: 0.1-0
+Version: 0.2-0
 Depends: vegan (>= 2.6-3), ggplot2
 Imports: scales
 Authors@R: person("Jari", "Oksanen", role = c("cre", "aut"),
 	   email="jhoksane@gmail.com")
-Description: Functions to produce ggplot2-based plots of objects produced by
-    functions in the vegan package.
+Description: Functions to produce 'ggplot2'-based plots of objects produced by
+    functions in the vegan package. Provides alternatives for 'lattice' graphics
+    in 'vegan' and a new infrastucture for ordination graphics. Package
+    'ggvegan' (also in github) provides more facilities of plotting 'vegan'
+    objects, including 'autoplot'-based ordination graphics.
 License: MIT + file LICENCE
 Encoding: UTF-8
 RoxygenNote: 7.2.1
