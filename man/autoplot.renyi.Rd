@@ -7,15 +7,21 @@
 \alias{fortify.renyiaccum}
 \title{Autoplot Graphics for vegan renyi and renyiaccum Objects}
 \usage{
-\method{autoplot}{renyi}(object, fill = "skyblue", alpha = 0.2, ...)
+\method{autoplot}{renyi}(
+  object,
+  point.params = list(),
+  line.params = list(),
+  ribbon.params = list(),
+  ...
+)
 
 \method{fortify}{renyi}(model, data, ...)
 
 \method{autoplot}{renyiaccum}(
   object,
   ribbon = c("0.95", "minmax", "stdev"),
-  fill = "skyblue",
-  alpha = 0.5,
+  ribbon.params = list(),
+  line.params = list(),
   ...
 )
 
@@ -25,7 +31,10 @@
 \item{object}{Result from \pkg{vegan} \code{\link[vegan]{renyi}} or
 \code{\link[vegan]{renyiaccum}} functions.}
 
-\item{fill, alpha}{Parameters passed to \code{\link[ggplot2]{geom_ribbon}}}
+\item{point.params, line.params, ribbon.params}{List of graphical
+parameters passed to \code{\link[ggplot2]{geom_point}},
+\code{\link[ggplot2]{geom_line}},
+\code{\link[ggplot2]{geom_ribbon}}.}
 
 \item{...}{other arguments passed to methods}
 
