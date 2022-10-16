@@ -10,7 +10,7 @@
   plot = c("box", "violin", "density", "qqnorm"),
   scale = FALSE,
   facet = FALSE,
-  alpha = 0.5,
+  gg.params = list(),
   ...
 )
 
@@ -25,7 +25,12 @@
 
 \item{facet}{Split graph to facets by \code{Term}.}
 
-\item{alpha}{alpha channel of geometry.}
+\item{gg.params}{Arguments passed to function drawing the box-like
+object. Depending on argument \code{plot} the parameters are
+passed to
+\code{\link[ggplot2]{geom_boxplot}},\code{\link[ggplot2]{geom_violin}},
+\code{\link[ggplot2]{geom_density}} or
+\code{\link[ggplot2]{geom_qq}}}
 
 \item{...}{Other parameters passed to functions (ignored).}
 
