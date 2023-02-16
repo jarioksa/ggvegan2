@@ -13,4 +13,4 @@ Description: Functions to produce 'ggplot2'-based plots of objects produced by
     objects, including 'autoplot'-based ordination graphics.
 License: MIT + file LICENCE
 Encoding: UTF-8
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3

@@ -7,6 +7,10 @@
 \alias{fortify.radfit}
 \alias{fortify.radfit.frame}
 \alias{fortify.radline}
+\alias{fortify.rad}
+\alias{fortify.rad.frame}
+\alias{autoplot.rad}
+\alias{autoplot.rad.frame}
 \title{Autoplot Graphics for vegan RAD models}
 \usage{
 \method{autoplot}{radfit}(
@@ -26,6 +30,14 @@
 \method{fortify}{radfit.frame}(model, data, pick = "AIC", order.by = NULL, ...)
 
 \method{fortify}{radline}(model, data, ...)
+
+\method{fortify}{rad}(model, data, ...)
+
+\method{fortify}{rad.frame}(model, data, order.by = NULL, ...)
+
+\method{autoplot}{rad}(object, point.params = list(), line.params = list(), ...)
+
+\method{autoplot}{rad.frame}(object, point.params = list(), ...)
 }
 \arguments{
 \item{object}{Result object from \code{\link[vegan]{radfit}}.}
