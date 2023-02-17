@@ -37,7 +37,7 @@
 
 \method{autoplot}{rad}(object, point.params = list(), line.params = list(), ...)
 
-\method{autoplot}{rad.frame}(object, point.params = list(), ...)
+\method{autoplot}{rad.frame}(object, point.params = list(), highlight = NULL, ...)
 }
 \arguments{
 \item{object}{Result object from \code{\link[vegan]{radfit}}.}
@@ -61,6 +61,9 @@ and \code{"BIC"} for selecting the best model by AIC or BIC, or
 returns all fitted models.}
 
 \item{order.by}{A vector used for ordering site panels.}
+
+\item{higlight}{Names of species that should be highlighted as
+coloured points.}
 }
 \description{
 \CRANpkg{ggplot2} graphics for Rank-Abundance Distribution models
