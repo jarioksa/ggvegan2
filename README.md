@@ -8,7 +8,7 @@ using **ggplot2** style `geom_` functions with full control. The
 package also provides **ggplot2** alternatives for some **lattice**
 panel functions.
 
-The package is complimentary to **ggvegan** package which has larger
+The package is complementary to **ggvegan** package which has larger
 choice of functions and supports a wider range of **vegan**
 methods. The **ggvegan** package is mainly built on `fortify` to
 extract data and `autoplot` to fast and easy graphics.
