@@ -4,13 +4,13 @@
 \alias{autoplot.radfit}
 \alias{autoplot.radfit.frame}
 \alias{autoplot.radline}
+\alias{autoplot.rad}
+\alias{autoplot.rad.frame}
 \alias{fortify.radfit}
 \alias{fortify.radfit.frame}
 \alias{fortify.radline}
 \alias{fortify.rad}
 \alias{fortify.rad.frame}
-\alias{autoplot.rad}
-\alias{autoplot.rad.frame}
 \title{Autoplot Graphics for vegan RAD models}
 \usage{
 \method{autoplot}{radfit}(
@@ -25,6 +25,10 @@
 
 \method{autoplot}{radline}(object, point.params = list(), line.params = list(), ...)
 
+\method{autoplot}{rad}(object, point.params = list(), line.params = list(), ...)
+
+\method{autoplot}{rad.frame}(object, point.params = list(), highlight = NULL, ...)
+
 \method{fortify}{radfit}(model, data, pick = NULL, ...)
 
 \method{fortify}{radfit.frame}(model, data, pick = "AIC", order.by = NULL, ...)
@@ -34,10 +38,6 @@
 \method{fortify}{rad}(model, data, ...)
 
 \method{fortify}{rad.frame}(model, data, order.by = NULL, ...)
-
-\method{autoplot}{rad}(object, point.params = list(), line.params = list(), ...)
-
-\method{autoplot}{rad.frame}(object, point.params = list(), highlight = NULL, ...)
 }
 \arguments{
 \item{object}{Result object from \code{\link[vegan]{radfit}}.}
@@ -51,6 +51,9 @@ lines (passed to \code{\link[ggplot2]{geom_point}} and
 
 \item{...}{other arguments passed to methods}
 
+\item{highlight}{Names of species that should be highlighted as
+coloured points.}
+
 \item{model}{model or other R object to convert to data frame}
 
 \item{data}{original dataset, if needed}
@@ -61,9 +64,6 @@ and \code{"BIC"} for selecting the best model by AIC or BIC, or
 returns all fitted models.}
 
 \item{order.by}{A vector used for ordering site panels.}
-
-\item{higlight}{Names of species that should be highlighted as
-coloured points.}
 }
 \description{
 \CRANpkg{ggplot2} graphics for Rank-Abundance Distribution models
