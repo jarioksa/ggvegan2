@@ -4,9 +4,13 @@
 \alias{autoplot.radfit}
 \alias{autoplot.radfit.frame}
 \alias{autoplot.radline}
+\alias{autoplot.rad}
+\alias{autoplot.rad.frame}
 \alias{fortify.radfit}
 \alias{fortify.radfit.frame}
 \alias{fortify.radline}
+\alias{fortify.rad}
+\alias{fortify.rad.frame}
 \title{Autoplot Graphics for vegan RAD models}
 \usage{
 \method{autoplot}{radfit}(
@@ -21,11 +25,19 @@
 
 \method{autoplot}{radline}(object, point.params = list(), line.params = list(), ...)
 
+\method{autoplot}{rad}(object, point.params = list(), line.params = list(), ...)
+
+\method{autoplot}{rad.frame}(object, point.params = list(), highlight = NULL, ...)
+
 \method{fortify}{radfit}(model, data, pick = NULL, ...)
 
 \method{fortify}{radfit.frame}(model, data, pick = "AIC", order.by = NULL, ...)
 
 \method{fortify}{radline}(model, data, ...)
+
+\method{fortify}{rad}(model, data, ...)
+
+\method{fortify}{rad.frame}(model, data, order.by = NULL, ...)
 }
 \arguments{
 \item{object}{Result object from \code{\link[vegan]{radfit}}.}
@@ -38,6 +50,9 @@ lines (passed to \code{\link[ggplot2]{geom_point}} and
 \code{\link[ggplot2]{geom_line}}).}
 
 \item{...}{other arguments passed to methods}
+
+\item{highlight}{Names of species that should be highlighted as
+coloured points.}
 
 \item{model}{model or other R object to convert to data frame}
 
